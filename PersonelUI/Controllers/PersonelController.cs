@@ -9,6 +9,7 @@ using PersonelUI.ViewModels;
 
 namespace PersonelUI.Controllers
 {
+    [Authorize(Roles = "A,U")]
     public class PersonelController : Controller
     {
         PersonelDbEntities db = new PersonelDbEntities();
@@ -18,6 +19,7 @@ namespace PersonelUI.Controllers
            var model= db.Personel.Include(x => x.Departman).ToList(); //join yapıyoruz.
             return View(model);
         }
+
 
         public ActionResult Yeni()
         {
