@@ -1,0 +1,24 @@
+﻿@model IEnumerable<PersonelUI.Models.EntitiyFramework.Personel>
+<h1>Personel Listesi</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Doğum Tarihi</th>
+            <th>Maaş</th>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var personel in Model)
+        {
+            <tr>
+                <td>@personel.Ad</td>
+                <td>@personel.Soyad</td>
+                <td>@personel.DogumTarihi.Value.ToShortDateString()</td>
+                <td>@personel.Maas</td>
+            </tr>
+        }
+
+    </thead>
+</table>
