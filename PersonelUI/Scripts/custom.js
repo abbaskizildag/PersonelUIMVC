@@ -1,4 +1,5 @@
 ﻿$(function () {
+    $("#tblDepartmanlar").DataTable();
     $("#tblDepartmanlar").on("click", ".btnDepartmanSil", function () {/*$(".btnDepartmanSil").click() burada ilkbaşta bunu kullanacaktık sonra vazgeçtik*/
         var btn = $(this);
         bootbox.confirm("Departmanı Silmek İstediğinize Emin misiniz", function (result) {
@@ -13,7 +14,6 @@
                     }
                 });
             }
-
         })
     });
 });
