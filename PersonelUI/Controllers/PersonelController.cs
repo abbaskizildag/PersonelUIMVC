@@ -37,7 +37,7 @@ namespace PersonelUI.Controllers
                     Departmanlar = db.Departman.ToList(),
                     Personel = personel
                 };
-                return View("PersonelForm",model);
+                return RedirectToAction("PersonelForm",model);
             }
             if (personel.Id==0)
             {

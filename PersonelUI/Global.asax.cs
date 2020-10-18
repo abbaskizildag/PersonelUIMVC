@@ -11,6 +11,7 @@ namespace PersonelUI
     {
         protected void Application_Start()
         {
+            GlobalFilters.Filters.Add(new AuthorizeAttribute()); //bunu yapýnca tüm sayfalara engellendi.
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

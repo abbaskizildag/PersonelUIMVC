@@ -11,17 +11,35 @@ namespace PersonelUI.Models.EntitiyFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Personel
     {
         public int Id { get; set; }
+        [Display(Name = "Departman Adý")]
+        [Required(ErrorMessage = "Lütfen bir departman adý seçiniz.")]
+
         public Nullable<int> DepartmanId { get; set; }
+        [Required(ErrorMessage = "Lütfen isim alanýný doldururuz.")]
+
         public string Ad { get; set; }
+        [Required(ErrorMessage = "Lütfen soyad alanýný doldurunuz.")]
         public string Soyad { get; set; }
+
+        [Display(Name = "Maaþ")]
+        [Required(ErrorMessage ="Lütfeb maaþ giriniz")]
+        [Range(1399, 8000, ErrorMessage = "Lütfen 1399-8000 arasýnda deðer girilmeli")]
         public Nullable<short> Maas { get; set; }
+
+        [Display(Name = "Doðum Tarihi")]
+        [Required(ErrorMessage = "Lütfen tarih seçiniz")]
+
         public Nullable<System.DateTime> DogumTarihi { get; set; }
+
+        [Display(Name = "Lütfen cinsiyetinizi seçiniz")]
+
         public Nullable<bool> Cinsiyet { get; set; }
-        public Nullable<bool> EvliMi { get; set; }
+        public bool EvliMi { get; set; }
     
         public virtual Departman Departman { get; set; }
     }

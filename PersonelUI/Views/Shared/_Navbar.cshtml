@@ -1,5 +1,7 @@
 ﻿<nav class="navbar navbar-light bg-light navbar-expand-md">
-    <a class="navbar-brand" href="#">Personel Yönetim Sistemi</a>
+    <a class="navbar-brand" href="#">Personel Yönetim Sistemi
+   Hoş Geldin @HttpContext.Current.User.Identity.Name</a>
+
     <ul class="nav navbar-nav">
         <li class="active nav-item">
             <a href="/Departman" class="nav-link">Departmanlar</a>
@@ -8,10 +10,14 @@
             <a href="/Personel" class="nav-link">Personel</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Giriş Yap</a>
+            <a href="/Security/Loginout" class="nav-link">Çıkış Yap</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">Üye Ol</a>
         </li>
     </ul>
+
+
+
+
 </nav>

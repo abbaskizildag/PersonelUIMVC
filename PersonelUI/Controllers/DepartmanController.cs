@@ -7,10 +7,13 @@ using System.Web.Mvc;
 
 namespace PersonelUI.Controllers
 {
+  
     public class DepartmanController : Controller
     {
         PersonelDbEntities db = new PersonelDbEntities();
 
+
+  
         public ActionResult Index()
         {
             var model = db.Departman.ToList();

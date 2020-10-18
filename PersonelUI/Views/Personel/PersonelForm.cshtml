@@ -4,10 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Personel Formu</h2>
-@Html.ValidationSummary()
+
+
 
 @using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
 {
+    @Html.ValidationSummary()
     @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Personel.Ad)
@@ -45,13 +47,13 @@
         <label>
             @Html.RadioButtonFor(m => m.Personel.Cinsiyet, false) Kadın
         </label>
-
+        @Html.ValidationMessageFor(m => m.Personel.Cinsiyet)
     </div>
 
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.Personel.EvliMi) Evliyseniz seçiniz
-
+            @Html.ValidationMessageFor(m => m.Personel.EvliMi)
         </label>
     </div>
     @Html.HiddenFor(m => m.Personel.Id)
