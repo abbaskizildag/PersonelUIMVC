@@ -17,7 +17,9 @@
 
 @using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post)) //form oluşturduk
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
+
         @Html.LabelFor(m => m.Ad) @*sen bana bir model oluştur modeldeki ada göre oluştur*@
         @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" }) @* ada göre Ad oluşturdu. *@
         @Html.ValidationMessageFor(m => m.Ad)
@@ -25,4 +27,12 @@
 
     </div>
     <button type="submit" class="btn btn-success">Kaydet</button>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
 }

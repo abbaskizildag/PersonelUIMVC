@@ -8,10 +8,11 @@
 
 @using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Personel.Ad)
         @Html.TextBoxFor(m => m.Personel.Ad, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m=> m.Personel.Ad)
+        @Html.ValidationMessageFor(m => m.Personel.Ad)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Personel.Soyad)
@@ -34,7 +35,7 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.Personel.DogumTarihi)
-        @Html.TextBoxFor(m => m.Personel.DogumTarihi, "{0:yyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.TextBoxFor(m => m.Personel.DogumTarihi, "{0:yyy-MM-dd}", new { @class = "form-control", type = "date", onchange = "CheckDateTypeIsValid(this)" })
         @Html.ValidationMessageFor(m => m.Personel.DogumTarihi)
     </div>
     <div class="radio">
@@ -50,10 +51,21 @@
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.Personel.EvliMi) Evliyseniz seçiniz
-            
+
         </label>
     </div>
-    @Html.HiddenFor(m=> m.Personel.Id)
+    @Html.HiddenFor(m => m.Personel.Id)
     <button type="submit" class="btn btn-success"> Kaydet</button>
 
+}
+@section scripts
+{
+    <script>
+        $('input[data-val=true]').blur(function () {
+            $(this).valid();
+        });
+    </script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }

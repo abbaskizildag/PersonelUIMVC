@@ -27,6 +27,7 @@ namespace PersonelUI.Controllers
             };
             return View("PersonelForm",model); //bu forma yönlendirdim.
         }
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Personel personel)
         {
             if (!ModelState.IsValid)

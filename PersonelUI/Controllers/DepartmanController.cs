@@ -22,7 +22,8 @@ namespace PersonelUI.Controllers
             
             return View(new Departman());
         }
-        [HttpPost]
+
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Departman departman)
         {
             if (!ModelState.IsValid) //geçerli değilse diyoruz
