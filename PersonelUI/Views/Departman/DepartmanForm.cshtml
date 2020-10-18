@@ -1,0 +1,28 @@
+﻿@model PersonelUI.Models.EntitiyFramework.Departman
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Departman Ekle</h2>
+
+
+@*<form method="post">
+        <div class="form-group">
+            <label>Departman Adı</label>
+            <input type="text" name="Ad" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success">Ekle</button>
+    </form>*@
+
+@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post)) //form oluşturduk
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ad) @*sen bana bir model oluştur modeldeki ada göre oluştur*@
+        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" }) @* ada göre Ad oluşturdu. *@
+        @Html.ValidationMessageFor(m => m.Ad)
+        @Html.HiddenFor(m => m.Id)
+
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}

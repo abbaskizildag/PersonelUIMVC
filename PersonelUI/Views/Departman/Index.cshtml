@@ -1,0 +1,32 @@
+﻿@using PersonelUI.Models.EntitiyFramework;
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Departmanlar Listesi</h2>
+<a class="btn btn-success" href="/Departman/Departmanform">Yeni Departman</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Ad</td>
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+    </thead>
+    <thead>
+        @foreach (var d in Model)
+        {
+        <tr>
+            <td>@d.Id</td>
+            <td>@d.Ad</td>
+            <td><a class="btn btn-primary" href="/Departman/Guncelle/@d.Id">Güncelle</a></td>
+            <td><a class="btn btn-danger" href="/Departman/Sil/@d.Id">Sil</a></td>
+        </tr>
+        }
+
+    </thead>
+</table>

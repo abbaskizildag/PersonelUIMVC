@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelUI", "PersonelUI\PersonelUI.csproj", "{AD171C71-14B2-4DF2-BCB7-3ADF14AC484B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD171C71-14B2-4DF2-BCB7-3ADF14AC484B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD171C71-14B2-4DF2-BCB7-3ADF14AC484B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD171C71-14B2-4DF2-BCB7-3ADF14AC484B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD171C71-14B2-4DF2-BCB7-3ADF14AC484B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2228023F-3744-45F9-A542-0E50CEA221AB}
+	EndGlobalSection
+EndGlobal
