@@ -1,0 +1,15 @@
+﻿@model PersonelUI.ViewModels.MesajViewModel
+
+@if (Model.Status)
+{
+    <div class="alet alert-success">
+        @Model.Mesaj <a href="@Model.Url"> @Model.LinkText</a>
+    </div>
+}
+else
+{
+    <div class="alet alert-danger">
+        @Model.Mesaj <a href="@Model.Url"> @Model.LinkText</a>
+    </div>
+}
+

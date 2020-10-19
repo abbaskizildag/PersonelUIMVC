@@ -1,6 +1,11 @@
 ﻿<nav class="navbar navbar-light bg-light navbar-expand-md">
-    <a class="navbar-brand" href="#">Personel Yönetim Sistemi
-   Hoş Geldin @HttpContext.Current.User.Identity.Name</a>
+    <a class="navbar-brand" href="#">
+        Personel Yönetim Sistemi Toplam Gider
+        @{Html.RenderAction("ToplamMaas", "Personel");}
+        <br />
+        @{Html.RenderAction("ToplamMaasAction", "Personel");}
+        Hoş Geldin @HttpContext.Current.User.Identity.Name
+    </a>
 
     <ul class="nav navbar-nav">
         <li class="active nav-item">

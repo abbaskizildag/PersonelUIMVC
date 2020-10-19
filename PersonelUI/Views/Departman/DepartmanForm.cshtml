@@ -15,8 +15,9 @@
         </div>
         <button type="submit" class="btn btn-success">Ekle</button>
     </form>*@
-
-@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post)) //form oluşturduk
+@*@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post)) bunu ajaxbegin form ile yapuyoruz*@
+<div id="mesaj"></div>
+@using (Ajax.BeginForm("Kaydet", "Departman",new AjaxOptions { HttpMethod="POST", UpdateTargetId="mesaj" })) //form oluşturduk
 {
     @Html.ValidationSummary()
     @Html.AntiForgeryToken()

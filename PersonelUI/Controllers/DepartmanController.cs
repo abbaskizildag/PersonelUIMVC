@@ -1,4 +1,5 @@
 ﻿using PersonelUI.Models.EntitiyFramework;
+using PersonelUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,9 +34,14 @@ namespace PersonelUI.Controllers
             {
                 return View("DepartmanForm");
             }
+
+            MesajViewModel model = new MesajViewModel(); //viewmeesaj'ı tanımladık
+
             if (departman.Id ==0)
             {
+
                 db.Departman.Add(departman);
+                model.Mesaj = departman.Ad + " Başarıyla Eklendi"; //mesaj için bu kodu ekledim
             }
             else
             {
@@ -45,9 +51,14 @@ namespace PersonelUI.Controllers
                     return HttpNotFound();
                 }
                 guncellenecekDepartman.Ad = departman.Ad;
+                model.Mesaj = departman.Ad + " Başarıyla Güncellendi"; //mesaj için bu kodu ekledim
             }
             db.SaveChanges();
-            return RedirectToAction("index","departman");
+            //return RedirectToAction("index","departman");
+            model.Status = true;
+            model.LinkText = "Departman Listesi";
+            model.Url = "/Departman";
+            return View("_Mesaj",model); //modeli'ide gönderdik.
         }
         public ActionResult Guncelle(int id)
         {
